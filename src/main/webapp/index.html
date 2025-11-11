@@ -6,23 +6,66 @@
     <link rel="stylesheet" href="styles/main.css" type="text/css"/>
 </head>	
 <body>
+    <img src="images/Logo.png" alt="Murach Logo"width="100">
     <h1>Join our email list</h1>
     <p>To join our email list, enter your name and
        email address below.</p>
-    <form action="emailList" method="post" class="content-card">
-        <input type="hidden" name="action" value="add">
+    <h2>Survey</h2>
+    <p>If you have a moment,we'd appreciate it if you would fill out this survey</p>
+    <h2>Your information</h2>
 
-        <label>Email:</label>
-        <input type="email" name="email" required><br>
+    <form action="emailList" method="post">
+    <input type="hidden" name="action" value="add">
 
         <label>First Name:</label>
         <input type="text" name="firstName" required><br>
 
         <label>Last Name:</label>
         <input type="text" name="lastName" required><br>
+        
+        <label>Email:</label>
+        <input type="email" name="email" required><br>
+        
+        <label for="dob">Date of Birth:</label>
+        <input type="text" id="dob" name="dateOfBirth">	
+    <h2>How did you hear about us?</h2>
+    <p>
+        <input type="radio" id="search_engine" name="referral_source" value="search_engine">
+        <label for="search_engine">Search engine</label>
+        
+        <input type="radio" id="word_of_mouth" name="referral_source" value="word_of_mouth">
+        <label for="word_of_mouth">Word of mouth</label>
+        
+        <input type="radio" id="social_media" name="referral_source" value="social_media">
+        <label for="social_media">Social Media</label>
+        
+        <input type="radio" id="other" name="referral_source" value="other">
+        <label for="other">Other</label>
+    </p>
+    <h2>Would you like to receive announcements about new CDs and special offers?</h2>
 
-        <label>&nbsp;</label>
-        <input type="submit" value="Join Now" id="submit">
+    <p>
+        <input type="checkbox" id="like_that" name="like_that" value="yes">
+        <label for="like_that">YES, I'd like that.</label>
+    </p>
+    <p>
+        <input type="checkbox" id="email_announcements" name="email_announcements" value="yes">
+        <label for="email_announcements">YES, please send me email announcements.</label>
+    </p>
+
+    <p>
+        <label for="contact_method">Please contact me by:</label>
+        <select id="contact_method" name="contact_method">
+            <option value="email_or_postal" selected>Email or postal mail</option>
+            <option value="email_only">Email only</option>
+            <option value="postal_only">Postal mail only</option>
+        </select>
+    </p>
+
+    <p>
+        <input type="submit" value="Submit">
+    </p>
+
     </form>
-</body>
+    </body>
 </html>
