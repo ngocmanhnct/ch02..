@@ -33,3 +33,6 @@
     </div>
     </body>
 </html>
+<jsp:include page="/includes/header.html" />
+<%-- ... (n?i dung chính c?a trang) ... --%>
+<jsp:include page="/includes/footer.jsp" />

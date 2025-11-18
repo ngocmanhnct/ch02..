@@ -55,6 +55,9 @@ public class EmailListServlet extends HttpServlet {
             
             request.setAttribute("user", user);
             request.setAttribute("message", message);
+            java.util.Calendar cal = java.util.Calendar.getInstance();
+            int currentYear = cal.get(java.util.Calendar.YEAR);
+            request.setAttribute("currentYear", currentYear);
         }
 
         // forward request and response objects to specified URL

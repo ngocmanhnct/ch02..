@@ -9,7 +9,8 @@
     
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-        <jakartaee>10.0.0</jakartaee> </properties>
+        <jakartaee>10.0.0</jakartaee>
+    </properties>
     
     <dependencies>
         <dependency>
@@ -21,13 +22,23 @@
         <dependency>
             <groupId>jakarta.servlet.jsp.jstl</groupId>
             <artifactId>jakarta.servlet.jsp.jstl-api</artifactId>
-            <version>3.0.0</version>
-            <scope>provided</scope>
+            <version>3.0.0</version>    
+        </dependency>
+        <dependency>
+            <groupId>org.glassfish.web</groupId>
+            <artifactId>jakarta.servlet.jsp.jstl</artifactId>
+            <version>3.0.1</version>
         </dependency>
         <dependency>
             <groupId>jakarta.ws.rs</groupId>
             <artifactId>jakarta.ws.rs-api</artifactId>
             <version>3.1.0</version>
+            <type>jar</type>
+        </dependency>
+        <dependency>
+            <groupId>com.liferay</groupId>
+            <artifactId>javax.jws</artifactId>
+            <version>1.1.0.LIFERAY-PATCHED-1</version>
             <type>jar</type>
         </dependency>
     </dependencies>
