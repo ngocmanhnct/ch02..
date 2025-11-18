@@ -14,57 +14,68 @@ public class EmailListServlet extends HttpServlet {
             HttpServletResponse response)
             throws ServletException, IOException {
 
-        String url = "/index.html";
+        // SỬA LỖI TẠI ĐÂY: Đổi thành index.jsp
+        String url = "/index.jsp";
 
         // get current action
         String action = request.getParameter("action");
         if (action == null) {
             action = "join";  // default action
         }
-        System.out.println("EmailListServlet action: " + action);
-
-        // Yêu cầu 9: Ghi vào log file của server
-        getServletContext().log("EmailListServlet action: " + action);
 
         // perform action and set URL to appropriate page
         if (action.equals("join")) {
-            url = "/index.html";    // the "join" page
+            url = "/index.jsp";    // SỬA LỖI TẠI ĐÂY: Đổi thành index.jsp
         } 
         else if (action.equals("add")) {
-            // get parameters from the request
+            // ... (Phần code xử lý lấy dữ liệu giữ nguyên như cũ) ...
             String firstName = request.getParameter("firstName");
             String lastName = request.getParameter("lastName");
             String email = request.getParameter("email");
+            
+            // Lấy dữ liệu mới
+            String dateOfBirth = request.getParameter("dateOfBirth");
+            String referralSource = request.getParameter("referral_source");
+            String contactMethod = request.getParameter("contact_method");
+            String likeThatParam = request.getParameter("like_that");
+            String emailAnnouncementsParam = request.getParameter("email_announcements");
+            
+            String likeThat = (likeThatParam != null) ? "Yes" : "No";
+            String emailAnnouncements = (emailAnnouncementsParam != null) ? "Yes" : "No";
 
-            // store data in User object
             User user = new User(firstName, lastName, email);
 
-            // Validation (Kiểm tra dữ liệu) ---
             String message;
             if (firstName == null || lastName == null || email == null ||
                 firstName.isEmpty() || lastName.isEmpty() || email.isEmpty()) {
                 
                 message = "Please fill out all three text boxes.";
-                url = "/index.html"; 
+                url = "/index.jsp"; // SỬA LỖI TẠI ĐÂY: Đổi thành index.jsp
             } 
             else {
                 message = "";
                 UserDB.insert(user);
-                url = "/thanks.jsp";   // the "thanks" page
+                url = "/thanks.jsp";
             }
             
             request.setAttribute("user", user);
             request.setAttribute("message", message);
+            request.setAttribute("dateOfBirth", dateOfBirth);
+            request.setAttribute("referralSource", referralSource);
+            request.setAttribute("contactMethod", contactMethod);
+            request.setAttribute("likeThat", likeThat);
+            request.setAttribute("emailAnnouncements", emailAnnouncements);
+
             java.util.Calendar cal = java.util.Calendar.getInstance();
             int currentYear = cal.get(java.util.Calendar.YEAR);
             request.setAttribute("currentYear", currentYear);
         }
 
-        // forward request and response objects to specified URL
         getServletContext()
                 .getRequestDispatcher(url)
                 .forward(request, response);
     }
+    
     @Override
     protected void doGet(HttpServletRequest request,
             HttpServletResponse response)

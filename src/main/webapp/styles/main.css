@@ -1,163 +1,44 @@
-/* ======== Reset & Body ======== */
-*, *:before, *:after {
-  box-sizing: border-box;
+/* The styles for the elements */
+body { 
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 85%;
+    margin-left: 2em;
+    margin-right: 2em;
+    width: 400px;
 }
-
-body {
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-  font-size: 16px;
-  background: #f5f7fa;
-  color: #333;
-  margin: 0;
-  padding: 2em;
-  line-height: 1.6;
+h1 {     
+    font-size: 140%;
+    color: teal;
+    margin-bottom: .5em;    
 }
-
-/* ======== Header & Logo ======== */
-.logo {
-  display: block;
-  margin: 0 auto 1em; /* Căn giữa logo */
+h2 {     
+    font-size: 120%;
+    color: teal;
+    margin-bottom: .5em;    
 }
-
-h1 {
-  color: #006666;
-  text-align: center;
-  font-size: 2em;
-  margin-bottom: 0.5em; /* Giảm khoảng cách */
-  letter-spacing: 0.5px;
-  text-shadow: 1px 1px 2px rgba(0,0,0,0.05);
-}
-
-/* Chỉ định dạng cho <p> ngay dưới <body> */
-body > p {
-  text-align: center;
-  font-size: 1.1em;
-  color: #555;
-  margin-bottom: 2em;
-}
-
-/* ======== Form Styling ======== */
-form {
-  background: #fff;
-  padding: 2.5em;
-  max-width: 500px; /* Hơi rộng hơn một chút cho vừa biểu mẫu phức tạp */
-  margin: 2em auto;
-  border-radius: 12px;
-  box-shadow: 0 10px 30px rgba(0,0,0,0.08), 
-              0 5px 12px rgba(0,0,0,0.05);
-  border-top: 4px solid #008080;
-}
-
-/* ======== NHÓM BIỂU MẪU (MỚI) ======== */
-fieldset {
-    border: 1px solid #ddd; /* Viền mỏng cho nhóm */
-    border-radius: 8px;
-    padding: 1.5em;
-    margin-bottom: 2em; /* Khoảng cách giữa các nhóm */
-}
-
-legend {
-    font-size: 1.3em; /* Kích thước tiêu đề nhóm */
-    font-weight: 700;
-    color: #007070; /* Cùng màu với tiêu đề */
-    padding: 0 0.5em; /* Khoảng đệm để không dính vào viền */
-}
-
-/* ======== Form Groups (MỚI) ======== */
-.form-group {
-    margin-bottom: 1.5em; /* Khoảng cách giữa các cặp label/input */
-}
-.form-group:last-child {
-    margin-bottom: 0;
-}
-
-/* ======== Labels ======== */
 label {
-  display: block;
-  font-weight: 600;
-  margin-bottom: 0.5em;
-  color: #444;
+    float: left;
+    width: 7em;
+    margin-bottom: 0.5em;
+    font-weight: bold;
+}
+input[type="text"], input[type="email"] {  /* An attribute selector */
+    width: 15em;
+    margin-left: 0.5em;    
+    margin-bottom: 0.5em;
+}
+span {
+    margin-left: 0.5em;    
+    margin-bottom: 0.5em;    
+}
+br {
+    clear: both;
 }
 
-/* ======== Input Fields & Select (Cập nhật) ======== */
-input[type="text"],
-input[type="email"],
-select { /* Thêm SELECT vào đây */
-  width: 100%;
-  padding: 12px 15px;
-  border: 1px solid #ddd;
-  border-radius: 8px;
-  font-size: 1em;
-  transition: all 0.3s ease-in-out;
-  background-color: #f9f9f9;
-  -webkit-appearance: none; /* Xóa kiểu mặc định của HĐH */
-  -moz-appearance: none;
-  appearance: none;
+/* The styles for the classes */
+.pad_top {
+    padding-top: 0.25em;
 }
-
-/* Thêm mũi tên cho <select> */
-select {
-    background-image: url('data:image/svg+xml;charset=US-ASCII,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%22292.4%22%20height%3D%22292.4%22%3E%3Cpath%20fill%3D%22%23007070%22%20d%3D%22M287%2069.4a17.6%2017.6%200%200%200-13-5.4H18.4c-5%200-9.3%201.8-13%205.4A17.6%2017.6%200%200%200%200%2082.2c0%205%201.8%209.3%205.4%2013%20l127.1%20127.1c3.6%203.6%207.8%205.4%2013%205.4s9.3-1.8%2013-5.4L287%2095.2c3.6-3.6%205.4-7.8%205.4-13%200-5-1.8-9.2-5.4-12.8z%22%2F%3E%3C%2Fsvg%3E');
-    background-repeat: no-repeat;
-    background-position: right 15px center;
-    background-size: 10px;
-}
-
-
-input[type="text"]:focus,
-input[type="email"]:focus,
-select:focus { /* Thêm SELECT vào đây */
-  border-color: #008080;
-  box-shadow: 0 0 10px rgba(0,128,128,0.2);
-  background-color: #fff;
-  outline: none;
-}
-
-/* ======== Radio & Checkbox (MỚI) ======== */
-.form-group-radio,
-.form-group-check {
-    display: flex; /* Căn chỉnh ô và nhãn */
-    align-items: center;
-    margin-bottom: 0.8em;
-}
-.form-group-radio label,
-.form-group-check label {
-    margin-bottom: 0; /* Ghi đè margin của label chung */
-    margin-left: 0.5em; /* Khoảng cách với ô */
-    font-weight: 500; /* Nhẹ hơn label chính */
-    color: #333;
-}
-input[type="radio"],
-input[type="checkbox"] {
-    margin: 0;
-    transform: scale(1.1); /* Cho ô to hơn một chút */
-    accent-color: #008080; /* Đổi màu khi được chọn */
-}
-
-/* ======== Submit Button ======== */
-#submit {
-  display: block;
-  width: 100%;
-  background: linear-gradient(90deg, #008080 0%, #006c6c 100%);
-  color: white;
-  padding: 12px 20px;
-  border: none;
-  border-radius: 8px;
-  font-size: 1.1em;
-  font-weight: 700;
-  cursor: pointer;
-  transition: all 0.3s ease, transform 0.2s;
-  margin-top: 1em; /* Khoảng cách với fieldset cuối */
-  box-shadow: 0 4px 15px rgba(0,128,128,0.25);
-}
-
-#submit:hover {
-  background: linear-gradient(90deg, #006c6c 0%, #005f5f 100%);
-  transform: translateY(-3px);
-  box-shadow: 0 6px 20px rgba(0,128,128,0.35);
-}
-
-#submit:active {
-  transform: translateY(-1px);
-  box-shadow: 0 2px 10px rgba(0,128,128,0.2);
+.margin_left {
+    margin-left: 0.5em;
 }

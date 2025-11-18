@@ -16,11 +16,29 @@
         <div class="user-data">
             <label>Email:</label>
             <span>${user.email}</span><br>
+            
             <label>First Name:</label>
             <span>${user.firstName}</span><br>
+            
             <label>Last Name:</label>
             <span>${user.lastName}</span><br>
+
+            <label>Date of Birth:</label>
+            <span>${dateOfBirth}</span><br>
+
+            <label>Referral Source:</label>
+            <span>${referralSource}</span><br>
+
+            <label>Receive Announcements:</label>
+            <span>${likeThat}</span><br>
+
+            <label>Email Announcements:</label>
+            <span>${emailAnnouncements}</span><br>
+
+            <label>Contact Method:</label>
+            <span>${contactMethod}</span><br>
         </div>
+
         <p>To enter another email address, click on the Back
             button in your browser or the Return button shown
             below.</p>
@@ -31,8 +49,11 @@
         </form>
 
     </div>
-    </body>
+
+    <%-- Footer logic n?u b?n s? d?ng include --%>
+    <%-- <jsp:include page="/includes/footer.jsp" /> --%>
+    
+    <p>&copy; Copyright ${currentYear} Mike Murach &amp; Associates</p>
+    
+</body>
 </html>
-<jsp:include page="/includes/header.html" />
-<%-- ... (n?i dung chính c?a trang) ... --%>
-<jsp:include page="/includes/footer.jsp" />
